@@ -67,6 +67,13 @@ npx eslint .
 - Twitter: [@str_angeal](https://twitter.com/Str_angeal)
 - LinkedIn: [Justice Bajeri](https://www.linkedin.com/in/justice-bajeri-0b7211243/)
 
+ **Author**
+ 
+:bust_in_silhouette:
+- GitHub: [@teke85](https://github.com/teke85)
+- Twitter: [@muttau](https://twitter.com/muttau)
+- LinkedIn: [isiteketo mutau](https://www.linkedin.com/in/isiteketo-mutau-736894241/)
+
 
 ## 🤝 Contributing
 
