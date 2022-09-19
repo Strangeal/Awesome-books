@@ -1,7 +1,7 @@
 // selecting elements
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
-const submitBtn = document.querySelector('#submit');
+// const submitBtn = document.querySelector('#submit');
 const bookList = document.querySelector('#book-list');
 const formGroup = document.querySelector('#form-container');
 let addOn;
@@ -42,3 +42,14 @@ function addBooks(addOn) {
   });
 }
 bookObj.forEach(addBooks);
+
+formGroup.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (titleInput.value !== '' && authorInput.value !== '') {
+    newAdd();
+    addBooks(addOn);
+    formGroup.reset();
+  } else {
+    alert('Please add a book');
+  }
+});
