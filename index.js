@@ -12,14 +12,33 @@ function newAdd() {
   addOn = {
     title: titleInput.value,
     author: authorInput.value,
-    id: Math.floor(Math.random()*1000000),
-  }
+    id: Math.floor(Math.random() * 1000000),
+  };
   bookObj.push(addOn);
   localStorage.setItem('saveItem', JSON.stringify(bookObj));
 }
 
 // Remove
 function removeBook(id) {
-  bookObj = bookObj.filter(filterObj => filterObj.id !==id);
+  bookObj = bookObj.filter((filterObj) => filterObj.id !== id);
   localStorage.setItem('saveItem', JSON.stringify(bookObj));
 }
+
+// Create Books
+function addBooks(addOn) {
+  const tableDiv = document.createElement('div');
+  const bookTitle = document.createElement('h3');
+  const authorName = document.createElement('h3');
+  const removeBtn = document.createElement('button');
+  const line = document.createElement('hr');
+  bookTitle.innerText = addOn.title;
+  authorName.innerText = addOn.author;
+  removeBtn.innerText = 'Remove';
+  tableDiv.append(bookTitle, authorName, removeBtn, line);
+  bookList.appendChild(tableDiv);
+  removeBtn.addEventListener('click', () => {
+    removeBtn.parentElement.remove();
+    removeBook(addOn.id);
+  });
+}
+bookObj.forEach(addBooks);
