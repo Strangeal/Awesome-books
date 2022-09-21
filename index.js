@@ -64,3 +64,24 @@ class storageStore {
     localStorage.setItem('books', JSON.stringify(books));
   }
 }
+
+/ display books
+document.addEventListener('DOMContentLoaded', displayOn.displayBooks);
+// Add book to list
+const formGroup = document.querySelector('#form-container');
+formGroup.addEventListener('submit', (e) => {
+  // Prevent default
+  e.preventDefault();
+  // Get form values
+const titleInput = document.querySelector('#title').value;
+const authorInput = document.querySelector('#author').value;
+  // instatiate || take input values
+  const newAdd = new Book(titleInput, authorInput);
+   console.log(newAdd);
+   // Add book to collection
+   displayOn.addToBooks(newAdd);
+   // Add book to local Storage
+   storageStore.saveBooks(newAdd);
+  //  clear input fields
+  displayOn.clearInputFields();
+});
