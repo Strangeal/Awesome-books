@@ -65,23 +65,33 @@ class storageStore {
   }
 }
 
-/ display books
+// display books
 document.addEventListener('DOMContentLoaded', displayOn.displayBooks);
+
 // Add book to list
 const formGroup = document.querySelector('#form-container');
 formGroup.addEventListener('submit', (e) => {
-  // Prevent default
-  e.preventDefault();
+  e.preventDefault(); // Prevent default
+
   // Get form values
 const titleInput = document.querySelector('#title').value;
 const authorInput = document.querySelector('#author').value;
+
   // instatiate || take input values
   const newAdd = new Book(titleInput, authorInput);
    console.log(newAdd);
    // Add book to collection
    displayOn.addToBooks(newAdd);
-   // Add book to local Storage
-   storageStore.saveBooks(newAdd);
+   storageStore.saveBooks(newAdd); // Add book to local Storage
   //  clear input fields
   displayOn.clearInputFields();
+});
+
+const bookList = document.querySelector('#book-list');
+bookList.addEventListener('click', (e) => {
+  // Remove a book from collection
+  displayOn.deleteBook(e.target);
+
+  // Remove book from local storage
+  storageStore.removeBooks(e.target.parentElement.textContent);
 });
