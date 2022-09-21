@@ -35,3 +35,32 @@ class displayOn {
     document.querySelector('#author').value = '';
   }
 }
+
+// Store class local storage
+class storageStore {
+  static getBooks() {
+    let books;
+    if(localStorage.getItem('books') === null) {
+      books = [];
+      // alert('Please add a book');
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+    return books;
+  }
+  static saveBooks(book) {
+    const books = storageStore.getBooks();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books))
+  }
+  static removeBooks(title) {
+    const books = storageStore.getBooks();
+    
+    books.forEach((book, index) => {
+      if(book.title !== title) {
+        books.splice(index, 1);
+      }
+    });
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+}
