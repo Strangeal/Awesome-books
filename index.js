@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Book class
 class Book {
   constructor(title, author) {
@@ -12,6 +13,7 @@ class displayOn {
     const books = storageStore.getBooks();
     books.forEach((bookAddOn) => displayOn.addToBooks(bookAddOn));
   }
+
   static addToBooks(bookAddOn) {
     const tableDiv = document.createElement('div');
     tableDiv.classList.add('collection');
@@ -25,11 +27,13 @@ class displayOn {
     `;
     bookList.appendChild(tableDiv);
   }
+
   static deleteBook(el) {
-    if(el.classList.contains('delete')) {
+    if (el.classList.contains('delete')) {
       el.parentElement.remove();
     }
   }
+
   static clearInputFields() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
@@ -40,24 +44,25 @@ class displayOn {
 class storageStore {
   static getBooks() {
     let books;
-    if(localStorage.getItem('books') === null) {
+    if (localStorage.getItem('books') === null) {
       books = [];
-      // alert('Please add a book');
     } else {
       books = JSON.parse(localStorage.getItem('books'));
     }
     return books;
   }
+
   static saveBooks(book) {
     const books = storageStore.getBooks();
     books.push(book);
-    localStorage.setItem('books', JSON.stringify(books))
+    localStorage.setItem('books', JSON.stringify(books));
   }
+
   static removeBooks(title) {
     const books = storageStore.getBooks();
-    
+
     books.forEach((book, index) => {
-      if(book.title !== title) {
+      if (book.title !== title) {
         books.splice(index, 1);
       }
     });
@@ -74,15 +79,14 @@ formGroup.addEventListener('submit', (e) => {
   e.preventDefault(); // Prevent default
 
   // Get form values
-const titleInput = document.querySelector('#title').value;
-const authorInput = document.querySelector('#author').value;
+  const titleInput = document.querySelector('#title').value;
+  const authorInput = document.querySelector('#author').value;
 
   // instatiate || take input values
   const newAdd = new Book(titleInput, authorInput);
-   console.log(newAdd);
-   // Add book to collection
-   displayOn.addToBooks(newAdd);
-   storageStore.saveBooks(newAdd); // Add book to local Storage
+  // Add book to collection
+  displayOn.addToBooks(newAdd);
+  storageStore.saveBooks(newAdd); // Add book to local Storage
   //  clear input fields
   displayOn.clearInputFields();
 });
