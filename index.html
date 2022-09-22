@@ -5,23 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>books</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <section class="container">
-    <h1 id="heading">Awesome books</h1>
+    <h1 class="heading">All awesome books</h1>
      <!-- Booklist data -->
         <div id="book-list"></div>
     <!-- Input fields -->
     <form id="form-container">
-      <div id="form-group">
-        <input type="text" name="" id="title">
+      <h2 class="input-heading">Add a new book</h2>
+      <div class="form-group">
+        <input type="text" id="title" placeholder="Title" required>
       </div>
-      <div id="form-group">
-        <input type="text" name="" id="author">
+      <div class="form-group">
+        <input type="text" id="author" placeholder="Author" required>
       </div>
-      <button type="submit" id="submit">Add</button>
+      <div class="form-group add-btn">
+      <button type="submit" id="submit" class="btn">Add</button>
+    </div>
     </form>
 </section>
-  <script src="index.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

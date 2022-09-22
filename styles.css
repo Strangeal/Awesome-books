@@ -1,3 +1,101 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* style content to center */
 body {
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 30rem;
+}
+
+.heading {
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(196, 124, 8, 0.674), rgb(17, 15, 15));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#book-list {
+  box-shadow: 0 0 0 2px #000;
+  margin-bottom: 1.3rem;
+}
+
+/* Style collection */
+.library-book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.library-book:nth-of-type(2n + 1) {
+  background-color: rgba(210, 207, 207, 0.542);
+}
+
+.library-collection {
+  display: flex;
+}
+
+.library-collection p {
+  margin: 0 1px 0 0;
+  padding: 0.3rem;
+  font-weight: 500;
+}
+
+.remove-btn,
+#submit {
+  box-shadow: 1px 1px 0 1px #000;
+  border: 2px solid #000;
+  margin: 0 0.8rem 0 0;
+  font-weight: 900;
+  color: pink;
+  background-image: linear-gradient(to right, rgba(196, 124, 8, 0.674), rgb(17, 15, 15));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+#submit {
+  margin: 0;
+}
+
+.remove-btn:hover,
+#submit:hover {
+  transform: scale(1.1);
+}
+
+/* Style form */
+.input-heading {
+  background-image: linear-gradient(0.15turn, rgb(17, 15, 15), rgba(196, 124, 8, 0.674), rgb(17, 15, 15), rgba(196, 124, 8, 0.674));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+input[type="text"] {
+  min-width: 20rem;
+  margin-bottom: 0.8rem;
+  border: 2px solid #000;
+  padding: 0.3rem 0.8rem;
+  outline: #000;
+}
+
+.add-btn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
