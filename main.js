@@ -2,8 +2,7 @@ const bookListEl = document.querySelector('#book-list');
 const addBtn = document.querySelector('.btn');
 const titleEl = document.querySelector('#title');
 const authorEl = document.querySelector('#author');
-const removeBtn = document.querySelector('.lb-btn');
-const form = document.querySelector('.form-container')
+const form = document.querySelector('.form-container');
 
 const bookList = JSON.parse(localStorage.getItem('storedBooks')) || [];
 
@@ -27,10 +26,6 @@ class Library {
         this.renderBooks();
         form.reset();
       }
-        // alert('Book added successfully, <br> Check list.');
-      // } else {
-      //   alert('Input something');
-      // }
     });
   }
 

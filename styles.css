@@ -28,7 +28,7 @@ body {
 }
 
 /* Style collection */
-.library-book{
+.library-book {
   display: flex;
   justify-content: space-between;
   align-items: center;
