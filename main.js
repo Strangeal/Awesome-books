@@ -14,6 +14,21 @@ const all = document.querySelector('#all');
 
 //
 
+const timeDate = () => {
+  const newDate = new Date();
+  date.innerHTML = `${newDate.toDateString()}, ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}pm `;
+  setTimeout(timeDate, 1000);
+};
+window.onload = timeDate();
+
+const refresh = () => {
+  contactMenu.style.display = 'none';
+  formMenu.style.display = 'none';
+  listMenu.style.display = 'block';
+  all.style.display = 'block';
+};
+window.onload = refresh();
+
 contactEl.addEventListener('click', () => {
   contactMenu.style.display = 'block';
   formMenu.style.display = 'none';
@@ -34,21 +49,6 @@ formLink.addEventListener('click', () => {
   listMenu.style.display = 'none';
   all.style.display = 'none';
 });
-
-const now = () => {
-  const newDate = new Date();
-  date.innerHTML = `${newDate.toDateString()}, ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}pm `;
-  setTimeout(now, 1000);
-};
-window.onload = now();
-
-const refresh = () => {
-  contactMenu.style.display = 'none';
-  formMenu.style.display = 'none';
-  listMenu.style.display = 'block';
-  all.style.display = 'block';
-};
-window.onload = refresh();
 
 const bookList = JSON.parse(localStorage.getItem('storedBooks')) || [];
 
