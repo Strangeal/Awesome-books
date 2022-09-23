@@ -11,7 +11,6 @@ const contactMenu = document.querySelector('#contact');
 const formLink = document.querySelector('#add-link');
 const date = document.querySelector('.date');
 const heading = document.querySelector('#heading-h1');
-console.log(heading);
 
 // display date & time dynamically
 
