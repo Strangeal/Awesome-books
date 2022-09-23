@@ -2,7 +2,6 @@ const bookListEl = document.querySelector('#book-list');
 const addBtn = document.querySelector('.btn');
 const titleEl = document.querySelector('#title');
 const authorEl = document.querySelector('#author');
-const form = document.querySelector('.form-container');
 const listMenu = document.querySelector('#book-list');
 const Link = document.querySelector('#link');
 const contactEl = document.querySelector('#contact-link');
@@ -13,7 +12,6 @@ const date = document.querySelector('.date');
 const heading = document.querySelector('#heading-h1');
 
 // display date & time dynamically
-
 const timeDate = () => {
   const newDate = new Date();
   date.innerHTML = `${newDate.toDateString()}, ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}pm `;
@@ -34,6 +32,9 @@ contactEl.addEventListener('click', () => {
   formMenu.style.display = 'none';
   listMenu.style.display = 'none';
   heading.style.display = 'none';
+  Link.style.color = '#000';
+  contactEl.style.color = 'blue';
+  formLink.style.color = '#000';
 });
 
 Link.addEventListener('click', () => {
@@ -41,6 +42,9 @@ Link.addEventListener('click', () => {
   formMenu.style.display = 'none';
   listMenu.style.display = 'block';
   heading.style.display = 'block';
+  Link.style.color = 'blue';
+  contactEl.style.color = '#000';
+  formLink.style.color = '#000';
 });
 
 formLink.addEventListener('click', () => {
@@ -48,6 +52,9 @@ formLink.addEventListener('click', () => {
   formMenu.style.display = 'block';
   listMenu.style.display = 'none';
   heading.style.display = 'none';
+  Link.style.color = '#000';
+  contactEl.style.color = '#000';
+  formLink.style.color = 'blue';
 });
 
 const bookList = JSON.parse(localStorage.getItem('storedBooks')) || [];
@@ -70,14 +77,18 @@ class Library {
         bookList.push(addNewBook);
         localStorage.setItem('storedBooks', JSON.stringify(bookList));
         this.renderBooks();
-        form.reset();
+        // form.reset();
+        titleEl.value = '';
+        authorEl.value = '';
       }
     });
   }
 
   renderBooks() {
     if (!bookList.length) {
-      bookListEl.innerHTML = 'No books added';
+      bookListEl.innerHTML = 'Hey There👋, Please add a bood';
+      bookListEl.style.textAlign = 'center';
+      bookListEl.style.fontWeight = '700';
     } else {
       let empty = '';
       bookList.forEach((each, index) => {
@@ -87,7 +98,7 @@ class Library {
         <p class="book-title">"${each.title}"</p> 
         <p>by</p>
         <p class="book-author">${each.author}</p>  </div>  
-        <button type="button" class="remove-btn" id=${index}>Remove</button>
+        <button type="button" class="remove-btn gradient-style" id=${index}>Remove</button>
     </div>`;
       });
       bookListEl.innerHTML = empty;

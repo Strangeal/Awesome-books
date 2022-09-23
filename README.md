@@ -13,6 +13,9 @@
 - css
 - Javascript
 
+## Live Demo
+
+[**See Project 🚀**](https://strangeal.github.io/Awesome-books/)
 
 ## Get Started
 
@@ -25,7 +28,7 @@ To get the content of this project locally you need to run the following command
 ### Setup
 1. Download the **Zip** file or clone the repo with:
 ```bash
-git clone git@github.com:Strangeal/Portfolio.git
+git clone git@github.com:Strangeal/Awesome-books.git
 ```
 3. To access cloned directory run:
 ```bash

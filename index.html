@@ -9,33 +9,35 @@
   </head>
   <body>
     <header>
-      <nav class="title">
-        <h4 id="heading">All awesome books</h4>
+      <nav class="navbar">
+        <a href="#list" id="heading" class="nav-brand gradient-style">All awesome books</a>
         <div class="links">
-          <ul class="ul-links">
-            <li class="listLink"><a id="link" href="#list">List</a></li>
-            <li><a href="#">|</a></li>
-            <li class="listLink">
-              <a id="add-link" href="#add-new">Add New</a>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a id="link" class="nav-link" href="#list">List</a>|
             </li>
-            <li><a href="#">|</a></li>
-            <li class="listLink">
-              <a id="contact-link" href="#contact-list">Contact</a>
+            <li class="nav-item">
+              <a id="add-link" class="nav-link" href="#add-new">Add New</a>|
+            </li>
+            <li class="nav-item">
+              <a id="contact-link" class="nav-link" href="#contact-list">Contact</a>|
             </li>
           </ul>
         </div>
       </nav>
     </header>
+
+    <main>
     <div class="date">Date</div>
     <br />
     <section class="container">
-      <h1 id="heading-h1" class="heading">All awesome books</h1>
+      <h1 id="heading-h1" class="heading gradient-style">All awesome books</h1>
       <!-- Booklist data -->
       <div id="book-list"></div>
       <div class="form-wrapper" id="form-wrapper">
         <!-- Input fields -->
         <form id="form-container">
-          <h2 class="input-heading">Add a new book</h2>
+          <h2 class="input-heading gradient-style">Add a new book</h2>
           <div class="form-group">
             <input type="text" id="title" placeholder="Title" required />
           </div>
@@ -43,13 +45,13 @@
             <input type="text" id="author" placeholder="Author" required />
           </div>
           <div class="form-group add-btn">
-            <button type="submit" id="submit" class="btn">Add</button>
+            <button type="submit" id="submit" class="btn gradient-style">Add</button>
           </div>
         </form>
       </div>
     </section>
-    <div class="contact" id="contact">
-      <h2 class="contact-heading">Contact Information</h2>
+    <div class="contact container" id="contact">
+      <h2 class="contact-heading gradient-style">Contact Information</h2>
       <p class="contact-paragraph">
         Do you have any questions or you just want to say "Hello"? You can reach
         out to us!
@@ -60,6 +62,7 @@
         <li>Our address: Streetname 22, 84503 City, Country</li>
       </ul>
     </div>
+  </main>
     <footer>
       <h3>Copyright @ Awesome Books store</h3>
     </footer>
