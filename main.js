@@ -10,7 +10,8 @@ const formMenu = document.querySelector('#form-wrapper');
 const contactMenu = document.querySelector('#contact');
 const formLink = document.querySelector('#add-link');
 const date = document.querySelector('.date');
-const all = document.querySelector('#heading');
+const heading = document.querySelector('#heading-h1');
+console.log(heading);
 
 // display date & time dynamically
 
@@ -25,7 +26,7 @@ const refresh = () => {
   contactMenu.style.display = 'none';
   formMenu.style.display = 'none';
   listMenu.style.display = 'block';
-  all.style.display = 'block';
+  heading.style.display = 'block';
 };
 window.onload = refresh();
 
@@ -33,21 +34,21 @@ contactEl.addEventListener('click', () => {
   contactMenu.style.display = 'block';
   formMenu.style.display = 'none';
   listMenu.style.display = 'none';
-  all.style.display = 'none';
+  heading.style.display = 'none';
 });
 
 Link.addEventListener('click', () => {
   contactMenu.style.display = 'none';
   formMenu.style.display = 'none';
   listMenu.style.display = 'block';
-  all.style.display = 'block';
+  heading.style.display = 'block';
 });
 
 formLink.addEventListener('click', () => {
   contactMenu.style.display = 'none';
   formMenu.style.display = 'block';
   listMenu.style.display = 'none';
-  all.style.display = 'none';
+  heading.style.display = 'none';
 });
 
 const bookList = JSON.parse(localStorage.getItem('storedBooks')) || [];
