@@ -4,7 +4,7 @@
 /* style content to center */
 body {
   background-color: #fff;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -17,7 +17,11 @@ body {
 
 .heading {
   text-align: center;
-  background-image: linear-gradient(to right, rgba(196, 124, 8, 0.674), rgb(17, 15, 15));
+  background-image: linear-gradient(
+    to right,
+    rgba(196, 124, 8, 0.674),
+    rgb(17, 15, 15)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -55,7 +59,11 @@ body {
   margin: 0 0.8rem 0 0;
   font-weight: 900;
   color: pink;
-  background-image: linear-gradient(to right, rgba(196, 124, 8, 0.674), rgb(17, 15, 15));
+  background-image: linear-gradient(
+    to right,
+    rgba(196, 124, 8, 0.674),
+    rgb(17, 15, 15)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
@@ -73,7 +81,13 @@ body {
 
 /* Style form */
 .input-heading {
-  background-image: linear-gradient(0.15turn, rgb(17, 15, 15), rgba(196, 124, 8, 0.674), rgb(17, 15, 15), rgba(196, 124, 8, 0.674));
+  background-image: linear-gradient(
+    0.15turn,
+    rgb(17, 15, 15),
+    rgba(196, 124, 8, 0.674),
+    rgb(17, 15, 15),
+    rgba(196, 124, 8, 0.674)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -86,7 +100,7 @@ body {
   padding: 0 4rem;
 }
 
-input[type="text"] {
+input[type='text'] {
   min-width: 20rem;
   margin-bottom: 0.8rem;
   border: 2px solid #000;
@@ -98,4 +112,48 @@ input[type="text"] {
   width: 100%;
   display: flex;
   justify-content: end;
+}
+
+/** Navigation Menu **/
+
+#list {
+  border: 1px solid black;
+}
+
+.title {
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 50px;
+}
+
+.links {
+  display: flex;
+  margin-left: 20px;
+}
+
+.ul-links {
+  list-style: none;
+  display: flex;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+li {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.ul-links li a:hover {
+  color: #4472e7;
+}
+
+.date {
+  float: right;
 }

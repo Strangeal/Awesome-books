@@ -3,6 +3,52 @@ const addBtn = document.querySelector('.btn');
 const titleEl = document.querySelector('#title');
 const authorEl = document.querySelector('#author');
 const form = document.querySelector('.form-container');
+const listMenu = document.querySelector('#book-list');
+const Link = document.querySelector('#link');
+const contactEl = document.querySelector('#contact-link');
+const formMenu = document.querySelector('#form-wrapper');
+const contactMenu = document.querySelector('#contact');
+const formLink = document.querySelector('#add-link');
+const date = document.querySelector('.date');
+const all = document.querySelector('#all');
+
+//
+
+contactEl.addEventListener('click', () => {
+  contactMenu.style.display = 'block';
+  formMenu.style.display = 'none';
+  listMenu.style.display = 'none';
+  all.style.display = 'none';
+});
+
+Link.addEventListener('click', () => {
+  contactMenu.style.display = 'none';
+  formMenu.style.display = 'none';
+  listMenu.style.display = 'block';
+  all.style.display = 'block';
+});
+
+formLink.addEventListener('click', () => {
+  contactMenu.style.display = 'none';
+  formMenu.style.display = 'block';
+  listMenu.style.display = 'none';
+  all.style.display = 'none';
+});
+
+const now = () => {
+  const newDate = new Date();
+  date.innerHTML = `${newDate.toDateString()}, ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}pm `;
+  setTimeout(now, 1000);
+};
+window.onload = now();
+
+const refresh = () => {
+  contactMenu.style.display = 'none';
+  formMenu.style.display = 'none';
+  listMenu.style.display = 'block';
+  all.style.display = 'block';
+};
+window.onload = refresh();
 
 const bookList = JSON.parse(localStorage.getItem('storedBooks')) || [];
 
