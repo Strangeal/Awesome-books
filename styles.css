@@ -1,29 +1,94 @@
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* style content to center */
+/* Reset styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-dark: #000;
+  --clr-white: #fff;
+  --bg-gradient: linear-gradient(0.15turn, rgb(17, 15, 15), rgba(196, 124, 8, 0.674), rgb(17, 15, 15), rgba(196, 124, 8, 0.674));
+  --btn-gradient: linear-gradient(to right, rgba(196, 124, 8, 0.674), rgb(17, 15, 15));
+  --bg-fill: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: var(--clr-white);
   font-family: 'Poppins', sans-serif;
 }
 
+.gradient-style {
+  text-align: center;
+  background-image: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--bg-fill);
+}
+
+/* date */
+.date {
+  float: right;
+  margin: 0 10px;
+}
+
+/* Navigation bar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 2rem;
+  box-shadow: 0 0 0 2px var(--clr-dark);
+  margin: 10px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-brand {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--clr-dark);
+  background-image: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--bg-fill);
+}
+
+.nav-link {
+  margin: 0 20px;
+  transition: 0.7s ease;
+  font-weight: 600;
+  color: var(--clr-dark);
+}
+
+.nav-link:hover {
+  color: dodgerblue;
+}
+
+/* style content to center */
 .container {
-  max-width: 30rem;
+  width: 30rem;
+  margin: auto;
 }
 
 .heading {
-  text-align: center;
-  background-image: linear-gradient(to right, rgba(196, 124, 8, 0.674), rgb(17, 15, 15));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding: 2rem 0;
 }
 
 #book-list {
-  box-shadow: 0 0 0 2px #000;
+  box-shadow: 0 0 0 2px var(--clr-dark);
   margin-bottom: 1.3rem;
 }
 
@@ -32,6 +97,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.3rem;
 }
 
 .library-book:nth-of-type(2n + 1) {
@@ -50,16 +116,13 @@ body {
 
 .remove-btn,
 #submit {
-  box-shadow: 1px 1px 0 1px #000;
-  border: 2px solid #000;
+  box-shadow: 1px 1px 0 1px var(--clr-dark);
+  border: 2px solid var(--clr-dark);
   margin: 0 0.8rem 0 0;
   font-weight: 900;
-  color: pink;
-  background-image: linear-gradient(to right, rgba(196, 124, 8, 0.674), rgb(17, 15, 15));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   cursor: pointer;
   transition: 0.4s ease;
+  padding: 0.2rem 0.5rem;
 }
 
 #submit {
@@ -73,29 +136,59 @@ body {
 
 /* Style form */
 .input-heading {
-  background-image: linear-gradient(0.15turn, rgb(17, 15, 15), rgba(196, 124, 8, 0.674), rgb(17, 15, 15), rgba(196, 124, 8, 0.674));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding: 2rem 0;
 }
 
-#form-container {
+.form-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 4rem;
+  height: 50vh;
 }
 
-input[type="text"] {
-  min-width: 20rem;
+input[type='text'] {
+  width: 30rem;
   margin-bottom: 0.8rem;
-  border: 2px solid #000;
+  border: 2px solid var(--clr-dark);
   padding: 0.3rem 0.8rem;
-  outline: #000;
+  outline: var(--clr-dark);
+  font-weight: 600;
 }
 
 .add-btn {
   width: 100%;
   display: flex;
   justify-content: end;
+}
+
+/* contact styles */
+.contact-paragraph {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.contact-heading {
+  padding: 2rem 0;
+}
+
+.contact-items li {
+  font-weight: 700;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid var(--clr-dark);
+  margin: 10px;
+  background-color: var(--clr-white);
+}
+
+footer h3 {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
