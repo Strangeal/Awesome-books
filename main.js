@@ -10,9 +10,9 @@ const formMenu = document.querySelector('#form-wrapper');
 const contactMenu = document.querySelector('#contact');
 const formLink = document.querySelector('#add-link');
 const date = document.querySelector('.date');
-const all = document.querySelector('#all');
+const all = document.querySelector('#heading');
 
-//
+// display date & time dynamically
 
 const timeDate = () => {
   const newDate = new Date();
