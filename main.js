@@ -86,7 +86,7 @@ class Library {
 
   renderBooks() {
     if (!bookList.length) {
-      bookListEl.innerHTML = 'Hey There👋, Please add a bood';
+      bookListEl.innerHTML = 'Hey There👋, Please add a book';
       bookListEl.style.textAlign = 'center';
       bookListEl.style.fontWeight = '700';
     } else {
